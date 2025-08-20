@@ -1,0 +1,32 @@
+# Build output directories
+/target/
+/bin/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+out/
+
+# NetBeans project files
+/nbproject/private/
+
+# Maven files
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Generated logs and temporary files
+*.log
+tmp/
+temp/
+
+# OS generated files
+.DS_Store
+Thumbs.db
