@@ -14,11 +14,21 @@ public class CookieLogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getContextPath();
         if (path == null || path.isEmpty()) path = "/";
-        Cookie cookie = new Cookie("user", "");
-        cookie.setMaxAge(0);
-        cookie.setPath(path);
-        response.addCookie(cookie);
-        response.sendRedirect(request.getContextPath() + "/login-cookie");
+        
+        // Xóa cookie user
+        Cookie userCookie = new Cookie("user", "");
+        userCookie.setMaxAge(0);
+        userCookie.setPath(path);
+        response.addCookie(userCookie);
+        
+        // Xóa cookie rememberMe nếu có
+        Cookie rememberCookie = new Cookie("rememberMe", "");
+        rememberCookie.setMaxAge(0);
+        rememberCookie.setPath(path);
+        response.addCookie(rememberCookie);
+        
+        // Chuyển hướng về trang chủ với thông báo
+        response.sendRedirect(request.getContextPath() + "/?logout=success");
     }
 
     @Override

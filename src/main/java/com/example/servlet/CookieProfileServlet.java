@@ -16,12 +16,19 @@ public class CookieProfileServlet extends HttpServlet {
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie c : cookies) {
-                if ("user".equals(c.getName())) {
+                if ("user".equals(c.getName()) && c.getValue() != null && !c.getValue().trim().isEmpty()) {
                     user = c.getValue();
                     break;
                 }
             }
         }
+        
+        // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+        if (user == null) {
+            response.sendRedirect(request.getContextPath() + "/login-cookie?error=required");
+            return;
+        }
+        
         request.setAttribute("user", user);
         request.getRequestDispatcher("/WEB-INF/views/profile_cookie.jsp").forward(request, response);
     }
