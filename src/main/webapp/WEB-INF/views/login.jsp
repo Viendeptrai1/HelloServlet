@@ -68,16 +68,6 @@
         </div>
     </div>
 
-    <script>
-        // Thêm hiệu ứng loading cho form
-        document.getElementById('loginForm').addEventListener('submit', function() {
-            const submitBtn = this.querySelector('button[type="submit"]');
-            submitBtn.innerHTML = 'Đang đăng nhập... <span class="spinner"></span>';
-            submitBtn.disabled = true;
-        });
-        
-        // Auto focus vào username
-        document.getElementById('username').focus();
-    </script>
+    <script src="${pageContext.request.contextPath}/assets/js/app.js"></script>
 </body>
 </html>

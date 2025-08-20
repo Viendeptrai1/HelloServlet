@@ -69,26 +69,6 @@
         </div>
     </div>
 
-    <script>
-        // Hiệu ứng cho button đăng xuất
-        document.querySelector('form[action*="logout"] button').addEventListener('click', function(e) {
-            if (confirm('Bạn có chắc muốn đăng xuất không?')) {
-                this.innerHTML = 'Đang đăng xuất... <span class="spinner"></span>';
-                this.disabled = true;
-                return true;
-            }
-            e.preventDefault();
-            return false;
-        });
-
-        // Hiệu ứng welcome
-        setTimeout(() => {
-            const welcome = document.querySelector('.user-info h3');
-            welcome.style.transform = 'scale(1.05)';
-            setTimeout(() => {
-                welcome.style.transform = 'scale(1)';
-            }, 200);
-        }, 500);
-    </script>
+    <script src="${pageContext.request.contextPath}/assets/js/app.js"></script>
 </body>
 </html>

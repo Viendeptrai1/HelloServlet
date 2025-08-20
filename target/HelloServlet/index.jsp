@@ -93,6 +93,7 @@
         </div>
     </div>
 
+    <script src="<%= request.getContextPath() %>/assets/js/app.js"></script>
     <script>
         // Thêm hiệu ứng loading cho các liên kết
         document.querySelectorAll('a.btn').forEach(button => {
