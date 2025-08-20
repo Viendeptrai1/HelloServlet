@@ -88,34 +88,6 @@
         </div>
     </div>
 
-    <script>
-        // Thêm hiệu ứng loading cho form
-        document.getElementById('loginForm').addEventListener('submit', function() {
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const rememberMe = document.getElementById('rememberMe').checked;
-            
-            if (rememberMe) {
-                submitBtn.innerHTML = 'Đang đăng nhập và lưu cookie... <span class="spinner"></span>';
-            } else {
-                submitBtn.innerHTML = 'Đang đăng nhập... <span class="spinner"></span>';
-            }
-            submitBtn.disabled = true;
-        });
-        
-        // Auto focus vào username
-        document.getElementById('username').focus();
-        
-        // Hiệu ứng cho checkbox
-        document.getElementById('rememberMe').addEventListener('change', function() {
-            const label = this.nextElementSibling;
-            if (this.checked) {
-                label.style.color = '#667eea';
-                label.style.fontWeight = '600';
-            } else {
-                label.style.color = '';
-                label.style.fontWeight = '500';
-            }
-        });
-    </script>
+    <script src="${pageContext.request.contextPath}/assets/js/app.js"></script>
 </body>
 </html>
